@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
+#    By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/21 20:01:04 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/21 21:01:53 by amerlon-         ###   ########.fr        #
+#    Updated: 2018/12/21 21:11:00 by cfahey           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = fillit
 FLAGS = -Wall -Werror -Wextra
 SRCS = main.c \
 		reader.c \
-		solver.c
+		solver.c \
+		valid.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = fillit.h
 

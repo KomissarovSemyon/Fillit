@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   valid.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/21 18:52:52 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/21 21:07:35 by cfahey           ###   ########.fr       */
+/*   Created: 2018/12/19 20:46:21 by cfahey            #+#    #+#             */
+/*   Updated: 2018/12/21 21:09:33 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+int			check_symbols(char *buf)
 {
-	int	fd;
-	int	*tetriminos;
+	int		i;
 
-	if (argc != 2)
-		PRINT_ERROR
-	else
+	i = 0;
+	if (!buf)
+		return (0);
+	while (i < 20)
 	{
-		fd = open(argv[1], O_RDONLY);
-		tetriminos = reader(fd);
-		close(fd);
-		if (!tetriminos)
-			PRINT_ERROR
-		else
-			solver(tetriminos);
+		if ((i + 1) % 5 == 0 && buf[i] != '\n')
+			return (0);
+		if ((buf[i] != '#' && buf[i] != '.') && ((i + 1) % 5 != 0))
+			return (0);
+		i++;
 	}
-	return (0);
+	if (buf[i] != '\n' && buf[i] != '\0')
+		return (0);
+	return (1);
 }
