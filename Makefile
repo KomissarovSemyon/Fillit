@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+         #
+#    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/21 20:01:04 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/21 21:11:00 by cfahey           ###   ########.fr        #
+#    Updated: 2018/12/21 21:27:22 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ FLAGS = -Wall -Werror -Wextra
 SRCS = main.c \
 		reader.c \
 		solver.c \
-		valid.c
+		validation.c \
+		translate.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = fillit.h
 
