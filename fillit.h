@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:35:24 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/21 21:10:21 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/21 21:32:44 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 int		*reader(int fd);
 void	solver(int *tetriminos);
+int	    translate(char *map);
 int		check_symbols(char *buf);
 
 

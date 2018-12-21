@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:54:51 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/21 21:13:03 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/21 21:41:35 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,25 @@
 
 int		*reader(fd)
 {
-	// char	*line;
 	char	buf[FIELD_SIZE + 1];
 	int		ret;
 	int		check;
+	int		*result;
+	int		i;
 
-	ret = read(fd, buf, FIELD_SIZE);
-	if (ret != 20 && ret != 21)
+	i = 0;
+	if (!(result = (int *)malloc((sizeof(int) * MAX_TETRI))))
 		return (NULL);
-	buf[ret] = '\0';
-	if ((check = check_symbols(buf)) == 0)
-		return (NULL);
-	printf("%d\n", ret);
-	return (NULL);
+	while (ret = read(fd, buf, FIELD_SIZE) != 0)
+	{
+		buf[ret] = '\0';
+		if ((ret != 20 && ret != 21) || ((check = check_symbols(buf)) == 0))
+		{
+			free(result);
+			return (NULL);
+		}
+		result[i] = translate(buf);
+		i++; 
+	}
+	return (result);
 }
