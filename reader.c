@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reader.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:54:51 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/21 21:41:35 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/21 21:47:05 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		*reader(fd)
 	i = 0;
 	if (!(result = (int *)malloc((sizeof(int) * MAX_TETRI))))
 		return (NULL);
-	while (ret = read(fd, buf, FIELD_SIZE) != 0)
+	while ((ret = read(fd, buf, FIELD_SIZE)) != 0)
 	{
 		buf[ret] = '\0';
 		if ((ret != 20 && ret != 21) || ((check = check_symbols(buf)) == 0))
@@ -34,5 +34,6 @@ int		*reader(fd)
 		result[i] = translate(buf);
 		i++; 
 	}
+	result[i] = 0;
 	return (result);
 }
