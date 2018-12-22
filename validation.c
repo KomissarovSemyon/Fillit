@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 20:46:21 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/22 10:53:52 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/23 02:47:14 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,23 @@
 int			check_symbols(char *buf)
 {
 	int		i;
+	int		hash;
 
 	i = 0;
+	hash = 0;
 	if (!buf)
 		return (0);
 	while (i < 20)
 	{
+		if (buf[i] == '#')
+			hash++;
 		if ((i + 1) % 5 == 0 && buf[i] != '\n')
 			return (0);
 		if ((buf[i] != '#' && buf[i] != '.') && ((i + 1) % 5 != 0))
 			return (0);
 		i++;
 	}
-	if (buf[i] != '\n' && buf[i] != '\0')
+	if ((buf[i] != '\n' && buf[i] != '\0') || hash != 4)
 		return (0);
 	return (1);
 }
