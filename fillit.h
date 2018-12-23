@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:35:24 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/21 21:32:44 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/23 05:38:12 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 # define PRINT_ERROR ft_putstr("error\n");
 
 # include "libft/libft.h"
+# include "trio.h"
 # include <fcntl.h>
 # include <stdio.h> // DELETE THIS!!!
 
 int		*reader(int fd);
 void	solver(int *tetriminos);
-int	    translate(char *map);
+int		translate(char *map, t_trio *masks);
 int		check_symbols(char *buf);
-
+int		check_mask(t_trio coord, t_trio *masks);
+t_trio	*generate_masks(void);
 
 #endif

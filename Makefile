@@ -6,7 +6,7 @@
 #    By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/21 20:01:04 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/23 03:19:49 by cfahey           ###   ########.fr        #
+#    Updated: 2018/12/23 05:17:29 by cfahey           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJS)
 	gcc $(FLAGS) $(OBJS) -o $(NAME) libft/libft.a
 
 $(OBJS): %.o: %.c
-	gcc $(FLAGS) -c $< -I$(INCLUDES) -o $@
+	gcc $(FLAGS) -c $< -Itrio.h -Ifillit.h -o $@
 
 clean:
 	rm -f $(OBJS)

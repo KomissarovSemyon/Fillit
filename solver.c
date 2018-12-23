@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solver.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/22 10:53:00 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/23 05:51:31 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	solver(int *tetriminos)
 	int	i;
 
 	i = -1;
-	while (tetriminos[++i])
+	while (tetriminos[++i] != -1)
 		printf("%d ", tetriminos[i]);
 	printf("\n");
+	(void)tetriminos;
 }

@@ -6,17 +6,18 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 20:46:21 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/23 03:46:23 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/23 05:46:40 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "trio.h"
+#include "fillit.h"
 
 /*
 **	Проверка на то что считанная тетримино валидная
 */
 
-int			check_symbols(char *buf, t_trio *masks)
+int			check_symbols(char *buf)
 {
 	int		i;
 	int		hash;
@@ -46,24 +47,36 @@ t_trio		*generate_masks(void)
 
 	if (!(res = (t_trio *)malloc(sizeof(t_trio) * 19)))
 		return (NULL);
-	trio_set(res[0], 10, 20, 30);
-	trio_set(res[1], 1, 2, 3);
-	trio_set(res[2], 1, 10, 11);
-	trio_set(res[3], 10, 11, 21);
-	trio_set(res[4], 9, 10, 19);
-	trio_set(res[5], 1, 9, 10);
-	trio_set(res[6], 1, 11, 12);
-	trio_set(res[7], 9, 10, 11);
-	trio_set(res[8], 1, 2, 11);
-	trio_set(res[9], 9, 10, 20);
-	trio_set(res[10], 10, 11, 20);
-	trio_set(res[11], 10, 11, 12);
-	trio_set(res[12], 1, 2, 10);
-	trio_set(res[13], 10, 20, 21);
-	trio_set(res[14], 1, 10, 20);
-	trio_set(res[15], 1, 2, 12);
-	trio_set(res[16], 8, 9, 10);
-	trio_set(res[17], 10, 19, 20);
-	trio_set(res[18], 1, 11, 21);
+	trio_set(&(res[0]), 10, 20, 30);
+	trio_set(&(res[1]), 1, 2, 3);
+	trio_set(&(res[2]), 1, 10, 11);
+	trio_set(&(res[3]), 10, 11, 21);
+	trio_set(&(res[4]), 9, 10, 19);
+	trio_set(&(res[5]), 1, 9, 10);
+	trio_set(&(res[6]), 1, 11, 12);
+	trio_set(&(res[7]), 9, 10, 11);
+	trio_set(&(res[8]), 1, 2, 11);
+	trio_set(&(res[9]), 9, 10, 20);
+	trio_set(&(res[10]), 10, 11, 20);
+	trio_set(&(res[11]), 10, 11, 12);
+	trio_set(&(res[12]), 1, 2, 10);
+	trio_set(&(res[13]), 10, 20, 21);
+	trio_set(&(res[14]), 1, 10, 20);
+	trio_set(&(res[15]), 1, 2, 12);
+	trio_set(&(res[16]), 8, 9, 10);
+	trio_set(&(res[17]), 10, 19, 20);
+	trio_set(&(res[18]), 1, 11, 21);
 	return (res);
+}
+
+int		check_mask(t_trio coords, t_trio *masks)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 19)
+		if (coords.c1 == (masks[i]).c1 && coords.c2 == (masks[i]).c2 &&
+			coords.c3 == (masks[i]).c3)
+			return (i);
+	return (-1);
 }
