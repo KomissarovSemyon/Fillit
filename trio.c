@@ -6,26 +6,15 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 03:09:37 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/23 03:18:37 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/23 03:40:59 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "trio.h"
 
-t_trio			*trio_new(t_char c1, t_char c2, t_char c3)
+void		trio_set(t_trio set, t_char c1, t_char c2, t_char c3)
 {
-	t_trio	*result;
-
-	if (!(result = (t_trio *)malloc(sizeof(t_trio))))
-		return (NULL);
-	result->c1 = c1;
-	result->c2 = c2;
-	result->c3 = c3;
-	return (result);
-}
-
-void			trio_del(t_trio **del)
-{
-	free(*del);
-	*del = NULL;
+	set.c1 = c1;
+	set.c2 = c2;
+	set.c3 = c3;
 }

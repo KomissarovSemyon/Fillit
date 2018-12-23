@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reader.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:54:51 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/22 10:57:39 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/23 03:46:08 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		*reader(fd)
 {
 	char	buf[FIELD_SIZE + 1];
 	int		ret;
-	int		check;
+	t_trio	*masks;
 	int		*result;
 	int		i;
 
@@ -33,7 +33,9 @@ int		*reader(fd)
 	while ((ret = read(fd, buf, FIELD_SIZE)) != 0)
 	{
 		buf[ret] = '\0';
-		if ((ret != 20 && ret != 21) || ((check = check_symbols(buf)) == 0))
+		if (!(masks = generate_masks()))
+			return (NULL);
+		if ((ret != 20 && ret != 21) || !check_symbols(buf, masks))
 		{
 			free(result);
 			return (NULL);
