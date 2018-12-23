@@ -6,7 +6,7 @@
 #    By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/21 20:01:04 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/23 02:39:37 by cfahey           ###   ########.fr        #
+#    Updated: 2018/12/23 03:19:49 by cfahey           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,11 @@ SRCS = main.c \
 		reader.c \
 		solver.c \
 		validation.c \
-		translate.c
+		translate.c \
+		trio.c
 OBJS = $(SRCS:.c=.o)
-INCLUDES = fillit.h
+INCLUDES = fillit.h \
+			trio.h
 
 all: $(NAME)
 
