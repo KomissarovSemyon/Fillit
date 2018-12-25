@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:54:51 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/25 11:58:45 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/25 12:58:11 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int		*reader(int fd, t_trio **masks)
 	{
 		buff[ret] = '\0';
 		if ((ret != 20 && ret != 21) || !check_symbols(buff) ||
-			(result[i] = translate(buff, masks)) == -1)
+			(result[i] = translate(buff, *masks)) == -1)
 			return (free_arr(result));
 		i++; 
 	}
-	if (i == 27)
+	if (i == 27 || ft_strlen(buff) != 20)
 		return (free_arr(result));
 	result[i] = -1;
 	return (result);
