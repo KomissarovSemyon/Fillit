@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:35:24 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/23 05:38:12 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/25 12:00:43 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <fcntl.h>
 # include <stdio.h> // DELETE THIS!!!
 
-int		*reader(int fd);
-void	solver(int *tetriminos);
+int		*reader(int fd, t_trio **masks);
+void	solver(int *tetriminos, t_trio *masks);
 int		translate(char *map, t_trio *masks);
 int		check_symbols(char *buf);
 int		check_mask(t_trio coord, t_trio *masks);

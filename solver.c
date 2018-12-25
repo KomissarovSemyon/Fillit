@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/23 05:51:31 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/25 12:01:13 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **	Функция основного алгоритма
 */
 
-void	solver(int *tetriminos)
+void	solver(int *tetriminos, t_trio masks)
 {
 	int	i;
 
