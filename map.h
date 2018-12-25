@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/24 19:20:14 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/25 12:40:26 by cfahey           ###   ########.fr       */
+/*   Created: 2018/12/25 12:39:36 by cfahey            #+#    #+#             */
+/*   Updated: 2018/12/25 12:40:22 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
-#include "trio.h"
+#ifndef MAP_H
+# define MAP_H
 
-char	*map_create(int size)
-{
-	char	*buf;
+char	*map_create(int size);
+int		size_map(int i);
 
-	buf = (char *)malloc(sizeof(char) * (size + 1));
-	buf[size] = '\0';
-	while (--size >= 0)
-		buf[size] = '.';
-	return (buf);
-}
-
-int		size_map(int i)
-{
-	int		j;
-
-	j = 1;
-	while (j * j < i * 4)
-		j++;
-	return (j * j);
-}
+#endif

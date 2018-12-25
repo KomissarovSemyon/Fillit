@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 18:52:52 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/25 11:59:23 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/25 12:42:17 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	int	fd;
 	int	*tetriminos;
-	char	*masks;
+	t_trio	*masks;
 
 	masks = NULL;
 	if (argc != 2)
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		if (!tetriminos)
 			PRINT_ERROR
 		else
-			solver(tetriminos);
+			solver(tetriminos, masks);
 	}
 	return (0);
 }
