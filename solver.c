@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/25 16:13:10 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/25 16:22:17 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ static void	remove_figure(char *map, int c, t_trio trio, int len)
 	trio.c1 = ((trio.c1 / 10 * len) + (trio.c1 % 10));
 	trio.c2 = ((trio.c2 / 10 * len) + (trio.c2 % 10));
 	trio.c3 = ((trio.c3 / 10 * len) + (trio.c3 % 10));
+	map[c] = '.';
+	map[trio.c1] = '.';
+	map[trio.c2] = '.';
+	map[trio.c3] = '.';
 }
 
 /*
@@ -52,10 +56,10 @@ static int	is_placable(char *map, int c, t_trio trio, int len)
 				return (0);
 		else
 		{
-			map[c] = '#';
-			map[trio.c1] = '#';
-			map[trio.c2] = '#';
-			map[trio.c3] = '#';
+			map[c] = 'A';
+			map[trio.c1] = 'A';
+			map[trio.c2] = 'A';
+			map[trio.c3] = 'A';
 			return (1);
 		}
 	}
