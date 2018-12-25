@@ -6,7 +6,7 @@
 /*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:54:51 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/23 05:42:39 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/25 11:26:50 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int		*free_arr(int *arr)
 **	битовых представлений тетримино
 */
 
-int		*reader(fd)
+int		*reader(int fd, char *temp)
 {
-	char	buf[FIELD_SIZE + 1];
+	char	buff[FIELD_SIZE + 1];
 	int		ret;
 	t_trio	*masks;
 	int		*result;
@@ -36,16 +36,18 @@ int		*reader(fd)
 	i = 0;
 	if (!(result = (int *)malloc(sizeof(int) * (MAX_TETRI + 1))))
 		return (NULL);
-	while ((ret = read(fd, buf, FIELD_SIZE)) != 0 && i != 27)
+	while ((ret = read(fd, buff, FIELD_SIZE)) != 0 && i != 27)
 	{
-		buf[ret] = '\0';
+		buff[ret] = '\0';
 		if (!(masks = generate_masks()))
 			return (free_arr(result));
-		if ((ret != 20 && ret != 21) || !check_symbols(buf) ||
-			(result[i] = translate(buf, masks)) == -1)
+		if ((ret != 20 && ret != 21) || !check_symbols(buff) ||
+			(result[i] = translate(buff, masks)) == -1)
 			return (free_arr(result));
+		temp = ft_strjoin(temp, buff);
 		i++; 
 	}
+	printf("%s", temp);
 	if (i == 27)
 		return (free_arr(result));
 	result[i] = -1;
