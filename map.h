@@ -3,17 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 12:39:36 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/25 12:40:22 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/25 17:03:55 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
 
-char	*map_create(int size);
+typedef struct	s_map
+{
+	char		*map;
+	int			len;
+}				t_map;
+
+t_map	map_create(int size);
 int		size_map(int i);
 
 #endif
