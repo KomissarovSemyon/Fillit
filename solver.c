@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/25 21:38:35 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/26 19:09:14 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,27 @@ static void	remove_figure(char *map, int c, t_trio trio, int len)
 	map[trio.c3] = '.';
 }
 
+static void	place_fig(t_map m, int c, t_trio trio, int count)
+{
+	int len;
+
+	len = m.len;
+	trio.c1 = ((trio.c1 / 10 * len) + (trio.c1 % 10));
+	trio.c2 = ((trio.c2 / 10 * len) + (trio.c2 % 10));
+	trio.c3 = ((trio.c3 / 10 * len) + (trio.c3 % 10));
+	m.map[c] = 'A' + count;
+	m.map[c + trio.c1] = 'A' + count;
+	m.map[c + trio.c2] = 'A' + count;
+	m.map[c + trio.c3] = 'A' + count;
+}
+
 /*
 **  Функция пытается поставить фигуру в с координату
 **	если может, то ставит
 **	Если поставила возвращает 1, иначе 0
 */
 
-static int	is_placable(t_map m, int c, t_trio trio, int count)
+static int	is_placable(t_map m, int c, t_trio trio)
 {
 	int len;
 
@@ -57,13 +71,7 @@ static int	is_placable(t_map m, int c, t_trio trio, int count)
 				((c + trio.c2) % len == 0) || ((c + trio.c3) % len == 0)))
 			return (0);
 		else
-		{
-			m.map[c] = 'A' + count;
-			m.map[trio.c1] = 'A' + count;
-			m.map[trio.c2] = 'A' + count;
-			m.map[trio.c3] = 'A' + count;
 			return (1);
-		}
 	}
 	return (0);
 }
@@ -73,13 +81,26 @@ static int	brute_force(t_map map, int *tetriminos, t_trio *masks, int count)
 	int	i;
 
 	if (tetriminos[count] == -1)
-		return (1);
+		return (print_map(map));
 	i = -1;
-	while (++i < map.len)
+	while (++i < map.len * map.len)
 	{
-		if (is_placable(map, ++i, masks[tetriminos[count]], count))
-			if (!brute_force(map, tetriminos, masks, count + 1))
+		if (is_placable(map, i , masks[tetriminos[count]]))
+		{
+			// printf("Before: \n");
+			// print_map(map);
+			// printf("\n");
+			place_fig(map, i, masks[tetriminos[count]], count);
+			// printf("After: \n");
+			// print_map(map);
+			// printf("\n");
+			if (brute_force(map, tetriminos, masks, count + 1))
+				return (1);
+			else
 				remove_figure(map.map, i, masks[tetriminos[count]], map.len);
+		}
+			// if (!brute_force(map, tetriminos, masks, count + 1))
+			// 	remove_figure(map.map, i, masks[tetriminos[count]], map.len);
 	}
 	return (0);
 }
@@ -96,7 +117,7 @@ void	solver(int *tetriminos, t_trio *masks)
 
 	len = tetriminos_count(tetriminos);
 	map = map_create(len);
-	brute_force(map, tetriminos, masks, 0);
+	printf("solver returned: %d\n", brute_force(map, tetriminos, masks, 0));
 	// map = map_create(size_map(len));
 	// while (map[i])
 }
