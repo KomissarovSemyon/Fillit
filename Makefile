@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+         #
+#    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/21 20:01:04 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/25 12:41:56 by cfahey           ###   ########.fr        #
+#    Updated: 2018/12/26 23:18:26 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 	gcc $(FLAGS) $(OBJS) -o $(NAME) libft/libft.a
 
 $(OBJS): %.o: %.c
-	gcc $(FLAGS) -c $< -Itrio.h -Ifillit.h -Imap.h -o $@
+	gcc $(FLAGS) -c $< -I. -o $@
 
 clean:
 	rm -f $(OBJS)
