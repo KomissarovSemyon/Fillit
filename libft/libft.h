@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 23:21:11 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/23 05:04:47 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/26 20:54:34 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ char				*ft_copyuntil(char *str, int c);
 char				*ft_strchr_safe(const char *s, int c);
 char				*ft_strdup_safe(const char *s1);
 int					ft_strnchr(const char *s, char ch, int n);
+int					ft_abs(int a);
 
 # define BUFF_SIZE 32
 int					get_next_line(const int fd, char **line);

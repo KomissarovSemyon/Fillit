@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+         #
+#    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/23 05:04:20 by cfahey           ###   ########.fr        #
+#    Updated: 2018/12/26 20:54:47 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,8 @@ SRC = ft_strlen.c \
 		ft_strchr_safe.c \
 		ft_strdup_safe.c \
 		get_next_line.c \
-		ft_strnchr.c
+		ft_strnchr.c \
+		ft_abs.c
 OBJS = $(SRC:.c=.o)
 INCLUDES = libft.h
 
