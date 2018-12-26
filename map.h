@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 12:39:36 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/26 18:40:18 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/26 19:19:30 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct	s_map
 	int			len;
 }				t_map;
 
-t_map	map_create(int size);
+t_map	map_create(int size, int offset);
 int		size_map(int i);
 int		print_map(t_map map);
 

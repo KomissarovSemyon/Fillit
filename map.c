@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 19:20:14 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/26 19:12:07 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/26 19:20:59 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include "trio.h"
 #include "map.h"
 
-t_map	map_create(int len)
+t_map	map_create(int len, int offset)
 {
 	t_map	map;
 	int		size;
 	int		i;
 
 	size = size_map(len);
-	printf("size - %d\n", size * size);
+	size += offset;
 	map.map = (char *)malloc(sizeof(char) * (size * size + 1));
 	map.len = size;
 	map.map[size * size] = '\0';
