@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   trio.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 02:57:43 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/23 05:46:16 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/26 21:58:30 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ typedef struct			s_trio
 }						t_trio;
 
 void					trio_set(t_trio *set, t_char c1, t_char c2, t_char c3);
+t_trio					trio_transform(t_trio t, int len, int c);
+
 
 #endif
