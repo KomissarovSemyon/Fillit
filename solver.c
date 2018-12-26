@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/26 19:20:33 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/26 19:29:23 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,17 +111,19 @@ static int	brute_force(t_map map, int *tetriminos, t_trio *masks, int count)
 
 void	solver(int *tetriminos, t_trio *masks)
 {
-	// int		i;
+	int		i;
 	t_map	map;
 	int		len;
 
 	len = tetriminos_count(tetriminos);
 	map = map_create(len, 0);
-	if (!brute_force(map, tetriminos, masks, 0))
+	i = 0;
+	while (brute_force(map, tetriminos, masks, 0) == 0)
 	{
 		free(map.map);
-		map = map_create(len, 1);
-		brute_force(map, tetriminos, masks, 0);
+		i++;
+		map = map_create(len, i);
+		// brute_force(map, tetriminos, masks, 0);
 	}
 	// printf("solver returned: %d\n", brute_force(map, tetriminos, masks, 0));
 	free(map.map);
