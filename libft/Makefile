@@ -6,7 +6,7 @@
 #    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/26 20:54:47 by amerlon-         ###   ########.fr        #
+#    Updated: 2018/12/27 04:13:20 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,20 +92,20 @@ all: $(NAME)
 
 $(NAME): $(OBJS) 
 	@ar rcs $(NAME) $(OBJS)
-	@echo "Buildin library"
+	@echo "\033[34mBuildin library\033[0m"
 	@ranlib $(NAME)
-	@echo "Indexing library"
+	@echo "\033[34mIndexing library\033[0m"
 
 $(OBJS): %.o: %.c
 	@gcc -Wall -Werror -Wextra -O3 -c $< -I$(INCLUDES) -o $@
 
 clean:
 	@rm -f $(OBJS)
-	@echo "Deleting binaries"
+	@echo "\033[34mDeleting library binaries\033[0m"
 
 fclean: clean
 	@rm -f libft.a
-	@echo "Deleting library"
+	@echo "\033[34mDeleting library\033[0m"
 
 re: fclean all
 
