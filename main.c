@@ -6,17 +6,11 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 04:53:42 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/27 05:11:47 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 05:12:44 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "trio.h"
-#include "map.h"
-#include "fcntl.h"
-#include "libft/libft.h"
-#include "unistd.h"
-#include "stdlib.h"
 
 int	main(int argc, char **argv)
 {
