@@ -6,12 +6,12 @@
 #    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/21 20:01:04 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/27 04:12:38 by amerlon-         ###   ########.fr        #
+#    Updated: 2018/12/27 04:28:30 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra
 SRCS = main.c \
 		reader.c \
 		solver.c \

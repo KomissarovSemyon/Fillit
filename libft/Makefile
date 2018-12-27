@@ -6,7 +6,7 @@
 #    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/27 04:13:20 by amerlon-         ###   ########.fr        #
+#    Updated: 2018/12/27 04:28:18 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,7 +97,7 @@ $(NAME): $(OBJS)
 	@echo "\033[34mIndexing library\033[0m"
 
 $(OBJS): %.o: %.c
-	@gcc -Wall -Werror -Wextra -O3 -c $< -I$(INCLUDES) -o $@
+	@gcc -Wall -Werror -Wextra -c $< -I$(INCLUDES) -o $@
 
 clean:
 	@rm -f $(OBJS)
