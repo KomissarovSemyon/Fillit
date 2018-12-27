@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/27 03:48:57 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 04:23:02 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,13 +131,6 @@ void	solver(int *tetriminos, t_trio *masks)
 		free(map.map);
 		i++;
 		map = map_create(len, i);
-		// brute_force(map, tetriminos, masks, 0);
 	}
-	// printf("solver returned: %d\n", brute_force(map, tetriminos, masks, 0));
 	free(map.map);
-	// while (*tetriminos != -1)
-	// {
-	// 	printf("(%d, %d, %d)\n", masks[*tetriminos].c1, masks[*tetriminos].c2, masks[*tetriminos].c3);
-	// 	tetriminos++;
-	// }
 }
