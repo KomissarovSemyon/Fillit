@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 18:52:52 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/27 04:25:11 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 04:40:41 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	int	fd;
-	int	*tetriminos;
+	int		fd;
+	int		*tetriminos;
 	t_trio	*masks;
 
 	masks = NULL;

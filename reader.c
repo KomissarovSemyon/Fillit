@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:54:51 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/26 23:27:57 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 04:33:57 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		*reader(int fd, t_trio **masks)
 		if ((ret != 20 && ret != 21) || !check_symbols(buff) ||
 			(result[i] = translate(buff, *masks)) == -1)
 			return (free_arr(result));
-		i++; 
+		i++;
 	}
 	if (i == 27 || ft_strlen(buff) != 20)
 		return (free_arr(result));

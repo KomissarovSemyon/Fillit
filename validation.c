@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfahey <cfahey@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 20:46:21 by cfahey            #+#    #+#             */
-/*   Updated: 2018/12/23 05:46:40 by cfahey           ###   ########.fr       */
+/*   Updated: 2018/12/27 04:36:02 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ int			check_symbols(char *buf)
 	return (1);
 }
 
+int			tetriminos_count(int *tetriminos)
+{
+	int	i;
+
+	i = 0;
+	while (tetriminos[i] != -1)
+		i++;
+	return (i);
+}
+
 t_trio		*generate_masks(void)
 {
 	t_trio		*res;
@@ -69,7 +79,7 @@ t_trio		*generate_masks(void)
 	return (res);
 }
 
-int		check_mask(t_trio coords, t_trio *masks)
+int			check_mask(t_trio coords, t_trio *masks)
 {
 	int	i;
 
