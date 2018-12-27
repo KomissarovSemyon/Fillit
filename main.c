@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 04:53:42 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/27 05:12:44 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 07:46:23 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 
 	masks = NULL;
 	if (argc != 2)
-		ft_putstr("error\n");
+		ft_putstr("usage: ./fillit [filename]\n");
 	else
 	{
 		fd = open(argv[1], O_RDONLY);
