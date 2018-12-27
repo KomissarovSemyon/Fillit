@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:35:24 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/27 04:36:32 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 05:11:51 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FILLIT_H
 # define MAX_TETRI 26
 # define FIELD_SIZE 21
-# define PRINT_ERROR ft_putstr("error\n");
 
 # include "libft/libft.h"
 # include "trio.h"
