@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/27 07:54:55 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 07:56:37 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ static int	is_placable(t_map m, int c, t_trio trio)
 		if ((c % len - ((trio.c1 + 3) / 10 * 10 - trio.c1) >= len) ||
 			(c % len - ((trio.c2 + 3) / 10 * 10 - trio.c2) >= len) ||
 			(c % len - ((trio.c3 + 3) / 10 * 10 - trio.c3) >= len) ||
-			(c % len - ((trio.c1 + 3) / 10 * 10 - trio.c1) < 0)||
-			(c % len - ((trio.c2 + 3) / 10 * 10 - trio.c2) < 0)||
+			(c % len - ((trio.c1 + 3) / 10 * 10 - trio.c1) < 0) ||
+			(c % len - ((trio.c2 + 3) / 10 * 10 - trio.c2) < 0) ||
 			(c % len - ((trio.c3 + 3) / 10 * 10 - trio.c3) < 0))
 			return (0);
 		else
