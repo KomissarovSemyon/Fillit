@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 19:55:28 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/27 07:42:03 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/27 07:54:55 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,7 @@ static int	brute_force(t_map map, int *tetriminos, t_trio *masks, int count)
 	{
 		if (is_placable(map, i, masks[tetriminos[count]]))
 		{
-			// printf("Before: \n");
-			// print_map(map);
-			// printf("\n");
 			place_fig(map, i, masks[tetriminos[count]], count);
-			// printf("After: \n");
-			// print_map(map);
-			// printf("\n");
 			if (brute_force(map, tetriminos, masks, count + 1))
 				return (1);
 			else
